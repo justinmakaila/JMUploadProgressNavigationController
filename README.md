@@ -7,7 +7,7 @@ UINavigationController subclass that includes methods to show/hide an upload pro
 
 ###Installation:
 Cocoapods:
-`pod 'JMUploadProgressNavigationController'`
+`pod 'JMUploadProgressNavigationController'` *coming soon*
 
 ###API
 
