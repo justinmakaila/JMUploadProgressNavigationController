@@ -66,7 +66,8 @@
 }
 
 - (void)retryUploadReceived:(NSNotification*)notification {
-    NSLog(@"Got retry");
+    [[JMAPIExample sharedClient] cancelOperation];
+    [[JMAPIExample sharedClient] startOperation];
 }
 
 @end

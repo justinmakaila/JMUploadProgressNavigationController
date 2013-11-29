@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5FAFBADF18492E8D001CBFCC /* JMAPIExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */; };
 		5FAFBAE418492FAA001CBFCC /* JMExampleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */; };
+		5FAFBAE718494044001CBFCC /* retry-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFBAE618494044001CBFCC /* retry-icon.png */; };
+		5FAFBAE918494070001CBFCC /* cancel-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFBAE818494070001CBFCC /* cancel-icon.png */; };
 		5FBE14F7184838AF00B46D4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14F6184838AF00B46D4B /* Foundation.framework */; };
 		5FBE14F9184838AF00B46D4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14F8184838AF00B46D4B /* CoreGraphics.framework */; };
 		5FBE14FB184838AF00B46D4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14FA184838AF00B46D4B /* UIKit.framework */; };
@@ -46,6 +48,8 @@
 		5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMAPIExample.m; sourceTree = "<group>"; };
 		5FAFBAE218492FAA001CBFCC /* JMExampleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMExampleNavigationController.h; sourceTree = "<group>"; };
 		5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMExampleNavigationController.m; sourceTree = "<group>"; };
+		5FAFBAE618494044001CBFCC /* retry-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retry-icon.png"; sourceTree = "<group>"; };
+		5FAFBAE818494070001CBFCC /* cancel-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-icon.png"; sourceTree = "<group>"; };
 		5FBE14F3184838AF00B46D4B /* JMUploadProgressNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMUploadProgressNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBE14F6184838AF00B46D4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBE14F8184838AF00B46D4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +124,15 @@
 				5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */,
 			);
 			name = "Example API Client";
+			sourceTree = "<group>";
+		};
+		5FAFBAE518494034001CBFCC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5FAFBAE818494070001CBFCC /* cancel-icon.png */,
+				5FAFBAE618494044001CBFCC /* retry-icon.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		5FBE14EA184838AE00B46D4B = {
@@ -213,6 +226,7 @@
 		5FBE153218483B1600B46D4B /* Progress View */ = {
 			isa = PBXGroup;
 			children = (
+				5FAFBAE518494034001CBFCC /* images */,
 				5FBE153318483B2A00B46D4B /* JMProgressView.h */,
 				5FBE153418483B2A00B46D4B /* JMProgressView.m */,
 			);
@@ -298,10 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAFBAE718494044001CBFCC /* retry-icon.png in Resources */,
 				5FBE1512184838B000B46D4B /* Images.xcassets in Resources */,
 				5FBE153718485E9D00B46D4B /* EQdfPqB.jpg in Resources */,
 				5FBE1501184838AF00B46D4B /* InfoPlist.strings in Resources */,
 				5FBE150A184838B000B46D4B /* Main.storyboard in Resources */,
+				5FAFBAE918494070001CBFCC /* cancel-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

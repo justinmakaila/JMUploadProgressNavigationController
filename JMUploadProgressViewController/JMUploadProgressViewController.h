@@ -33,10 +33,13 @@
  */
 - (void)uploadCancelled;
 
+/**
+ *  Called when an upload is resumed
+ */
 - (void)uploadResumed;
 
 /**
- *  Called when an upload is suspended
+ *  Called when an upload is paused
  */
 - (void)uploadPaused;
 

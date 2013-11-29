@@ -50,11 +50,8 @@ static NSString *const kNoProgressMessage = @"0%";
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     cancelButton.frame = CGRectMake(260, 5, 50, 34);
-    [cancelButton setTitle:@"X" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor blackColor]
-                       forState:UIControlStateNormal];
-    
     cancelButton.clipsToBounds = YES;
+    [cancelButton setImage:[UIImage imageNamed:@"cancel-icon"] forState:UIControlStateNormal];
     [cancelButton addTarget:self
                      action:@selector(cancelButtonPressed)
            forControlEvents:UIControlEventTouchUpInside];
@@ -65,11 +62,8 @@ static NSString *const kNoProgressMessage = @"0%";
     
     UIButton *retryButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     retryButton.frame = CGRectMake(205, 5, 50, 34);
-    [retryButton setTitle:@"R" forState:UIControlStateNormal];
-    [retryButton setTitleColor:[UIColor blackColor]
-                      forState:UIControlStateNormal];
-    
     retryButton.clipsToBounds = YES;
+    [retryButton setImage:[UIImage imageNamed:@"retry-icon"] forState:UIControlStateNormal];
     [retryButton addTarget:self
                     action:@selector(retryButtonPressed)
           forControlEvents:UIControlEventTouchUpInside];

@@ -55,17 +55,6 @@
     }
 }
 
-
-- (void)updateProgress:(NSTimer*)sender {
-    int random = arc4random() % 100;
-    
-    [self.navController setUploadProgress:random];
-    
-    if (random >= 100.0) {
-        [self.navController uploadFinished];
-    }
-}
-
 #pragma mark - Notifications
 
 - (void)cancelUploadReceived:(NSNotification*)notification {
@@ -73,7 +62,8 @@
 }
 
 - (void)retryUploadReceived:(NSNotification*)notification {
-    NSLog(@"Got retry");
+    [[JMAPIExample sharedClient] cancelOperation];
+    [[JMAPIExample sharedClient] startOperation];
 }
 
 @end
