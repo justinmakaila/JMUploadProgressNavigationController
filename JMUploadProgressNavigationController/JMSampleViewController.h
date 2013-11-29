@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PDetailViewController : UIViewController
+@interface JMSampleViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (weak, nonatomic) IBOutlet UIButton *showButton;
+@property (weak, nonatomic) IBOutlet UIButton *hideButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
