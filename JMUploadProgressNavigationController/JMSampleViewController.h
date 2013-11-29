@@ -10,6 +10,7 @@
 
 @interface JMSampleViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *showButton;
 @property (weak, nonatomic) IBOutlet UIButton *hideButton;
 

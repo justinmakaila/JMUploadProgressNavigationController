@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FAFBADF18492E8D001CBFCC /* JMAPIExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */; };
+		5FAFBAE418492FAA001CBFCC /* JMExampleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */; };
 		5FBE14F7184838AF00B46D4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14F6184838AF00B46D4B /* Foundation.framework */; };
 		5FBE14F9184838AF00B46D4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14F8184838AF00B46D4B /* CoreGraphics.framework */; };
 		5FBE14FB184838AF00B46D4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE14FA184838AF00B46D4B /* UIKit.framework */; };
@@ -24,6 +26,7 @@
 		5FBE1531184839F300B46D4B /* JMUploadProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE1530184839F300B46D4B /* JMUploadProgressViewController.m */; };
 		5FBE153518483B2A00B46D4B /* JMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE153418483B2A00B46D4B /* JMProgressView.m */; };
 		5FBE153718485E9D00B46D4B /* EQdfPqB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */; };
+		5FBE153A1849241200B46D4B /* JMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE15391849241200B46D4B /* JMTestViewController.m */; };
 		A3F1325DDB2049CC8172C090 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8C9634F7AC4A9B90DED4EC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		1F8C9634F7AC4A9B90DED4EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FAFBADD18492E8D001CBFCC /* JMAPIExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMAPIExample.h; sourceTree = "<group>"; };
+		5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMAPIExample.m; sourceTree = "<group>"; };
+		5FAFBAE218492FAA001CBFCC /* JMExampleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMExampleNavigationController.h; sourceTree = "<group>"; };
+		5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMExampleNavigationController.m; sourceTree = "<group>"; };
 		5FBE14F3184838AF00B46D4B /* JMUploadProgressNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMUploadProgressNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBE14F6184838AF00B46D4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBE14F8184838AF00B46D4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +70,8 @@
 		5FBE153318483B2A00B46D4B /* JMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMProgressView.h; path = JMUploadProgressViewController/JMProgressView.h; sourceTree = SOURCE_ROOT; };
 		5FBE153418483B2A00B46D4B /* JMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMProgressView.m; path = JMUploadProgressViewController/JMProgressView.m; sourceTree = SOURCE_ROOT; };
 		5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EQdfPqB.jpg; sourceTree = "<group>"; };
+		5FBE15381849241200B46D4B /* JMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTestViewController.h; sourceTree = "<group>"; };
+		5FBE15391849241200B46D4B /* JMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTestViewController.m; sourceTree = "<group>"; };
 		ABDA32164C7345A08A15F55A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +100,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FAFBAE018492E95001CBFCC /* Example View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FBE150E184838B000B46D4B /* JMSampleViewController.h */,
+				5FBE150F184838B000B46D4B /* JMSampleViewController.m */,
+				5FBE15381849241200B46D4B /* JMTestViewController.h */,
+				5FBE15391849241200B46D4B /* JMTestViewController.m */,
+				5FAFBAE218492FAA001CBFCC /* JMExampleNavigationController.h */,
+				5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */,
+			);
+			name = "Example View Controllers";
+			sourceTree = "<group>";
+		};
+		5FAFBAE118492EA0001CBFCC /* Example API Client */ = {
+			isa = PBXGroup;
+			children = (
+				5FAFBADD18492E8D001CBFCC /* JMAPIExample.h */,
+				5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */,
+			);
+			name = "Example API Client";
+			sourceTree = "<group>";
+		};
 		5FBE14EA184838AE00B46D4B = {
 			isa = PBXGroup;
 			children = (
+				5FBE152E184839AF00B46D4B /* JMUploadProgressNavigationController */,
 				5FBE14FC184838AF00B46D4B /* JMUploadProgressNavigationControllerSample */,
 				5FBE151E184838B000B46D4B /* JMUploadProgressNavigationControllerTests */,
 				5FBE14F5184838AF00B46D4B /* Frameworks */,
@@ -126,13 +158,11 @@
 		5FBE14FC184838AF00B46D4B /* JMUploadProgressNavigationControllerSample */ = {
 			isa = PBXGroup;
 			children = (
-				5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */,
-				5FBE152E184839AF00B46D4B /* JMUploadProgressNavigationController */,
 				5FBE1505184838AF00B46D4B /* PAppDelegate.h */,
 				5FBE1506184838AF00B46D4B /* PAppDelegate.m */,
 				5FBE1508184838B000B46D4B /* Main.storyboard */,
-				5FBE150E184838B000B46D4B /* JMSampleViewController.h */,
-				5FBE150F184838B000B46D4B /* JMSampleViewController.m */,
+				5FAFBAE018492E95001CBFCC /* Example View Controllers */,
+				5FAFBAE118492EA0001CBFCC /* Example API Client */,
 				5FBE1511184838B000B46D4B /* Images.xcassets */,
 				5FBE14FD184838AF00B46D4B /* Supporting Files */,
 			);
@@ -143,6 +173,7 @@
 		5FBE14FD184838AF00B46D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */,
 				5FBE14FE184838AF00B46D4B /* JMUploadProgressNavigationController-Info.plist */,
 				5FBE14FF184838AF00B46D4B /* InfoPlist.strings */,
 				5FBE1502184838AF00B46D4B /* main.m */,
@@ -176,7 +207,7 @@
 				5FBE152F184839F300B46D4B /* JMUploadProgressViewController.h */,
 				5FBE1530184839F300B46D4B /* JMUploadProgressViewController.m */,
 			);
-			name = JMUploadProgressNavigationController;
+			path = JMUploadProgressNavigationController;
 			sourceTree = "<group>";
 		};
 		5FBE153218483B1600B46D4B /* Progress View */ = {
@@ -323,10 +354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBE153518483B2A00B46D4B /* JMProgressView.m in Sources */,
+				5FAFBAE418492FAA001CBFCC /* JMExampleNavigationController.m in Sources */,
 				5FBE1510184838B000B46D4B /* JMSampleViewController.m in Sources */,
+				5FAFBADF18492E8D001CBFCC /* JMAPIExample.m in Sources */,
 				5FBE1503184838AF00B46D4B /* main.m in Sources */,
 				5FBE1531184839F300B46D4B /* JMUploadProgressViewController.m in Sources */,
 				5FBE1507184838AF00B46D4B /* PAppDelegate.m in Sources */,
+				5FBE153A1849241200B46D4B /* JMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

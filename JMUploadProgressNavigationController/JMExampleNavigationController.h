@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Present, Inc. All rights reserved.
 //
 
+#import "JMUploadProgressViewController.h"
 #import "JMSampleViewController.h"
 
-@interface JMExampleNavigationController : JMSampleViewController
+@interface JMExampleNavigationController : JMUploadProgressViewController
 
 @end

@@ -10,29 +10,46 @@
 
 @interface JMExampleNavigationController ()
 
+@property (strong, nonatomic) JMAPIExample *apiClient;
+
 @end
+
+static void *pUploadProgressContext = &pUploadProgressContext;
+static void *pUploadStatusContext = &pUploadStatusContext;
 
 @implementation JMExampleNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.apiClient = [JMAPIExample sharedClient];
+    
+    [self addObserver:self
+           forKeyPath:@"self.apiClient.uploadProgress"
+              options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+              context:pUploadProgressContext];
+    
+    [self addObserver:self
+           forKeyPath:@"self.apiClient.suspended"
+              options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+              context:pUploadStatusContext];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (context == pUploadProgressContext) {
+        NSNumber *new = [change objectForKey:@"new"];
+        [self setUploadProgress:[new floatValue]];
+    }else if (context == pUploadStatusContext) {
+        NSNumber *new = [change objectForKey:@"new"];
+        
+        if ([new boolValue]) {
+            [self uploadPaused];
+        }else {
+            [self uploadResumed];
+        }
+    }else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

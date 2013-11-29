@@ -7,8 +7,11 @@
 //
 
 #import "JMTestViewController.h"
+#import "JMExampleNavigationController.h"
 
 @interface JMTestViewController ()
+
+@property (strong, nonatomic) JMExampleNavigationController *navController;
 
 @end
 
@@ -23,16 +26,47 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.navController = (JMExampleNavigationController*)self.navigationController;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelUploadReceived:) name:JMCancelUploadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(retryUploadReceived:) name:JMRetryUploadNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (IBAction)buttonPressed:(UIButton*)sender {
+    if (sender == self.pauseButton) {
+        if (self.pauseButton.isSelected) {
+            [[JMAPIExample sharedClient] startOperation];
+            self.pauseButton.selected = NO;
+        }else {
+            [[JMAPIExample sharedClient] suspendOperation];
+            self.pauseButton.selected = YES;
+        }
+    }else if (sender == self.cancelButton) {
+        [[JMAPIExample sharedClient] cancelOperation];
+        [self.navController uploadCancelled];
+    }else if (sender == self.failButton) {
+        [[JMAPIExample sharedClient] suspendOperation];
+        [self.navController uploadFailed];
+    }
+}
+
+#pragma mark - Notifications
+
+- (void)cancelUploadReceived:(NSNotification*)notification {
+    [self.navController uploadCancelled];
+}
+
+- (void)retryUploadReceived:(NSNotification*)notification {
+    NSLog(@"Got retry");
 }
 
 @end

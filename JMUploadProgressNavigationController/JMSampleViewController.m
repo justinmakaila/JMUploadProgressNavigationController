@@ -7,14 +7,11 @@
 //
 
 #import "JMSampleViewController.h"
-#import "JMUploadProgressViewController.h"
+#import "JMExampleNavigationController.h"
 
-@interface JMSampleViewController () {
-    float progress;
-    NSTimer *timer;
-}
+@interface JMSampleViewController ()
 
-@property (strong, nonatomic) JMUploadProgressViewController *navController;
+@property (strong, nonatomic) JMExampleNavigationController *navController;
 
 @end
 
@@ -22,57 +19,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"JMUploadProgressViewController";
+    self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navController = (JMExampleNavigationController*)self.navigationController;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelUploadReceived:) name:JMCancelUploadNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(retryUploadReceived:) name:JMRetryUploadNotification object:nil];
-    
-    self.view.backgroundColor = [UIColor redColor];
-    progress = 0.0f;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)buttonPressed:(UIButton*)sender {
-    if (!self.navController) {
-        self.navController = (JMUploadProgressViewController*)self.navigationController;
-    }
-    
     if ([sender isEqual:self.showButton]) {
-        if (timer) {
-            [self stopTimer];
-        }
-        
         [self.navController uploadStarted];
-        [self startTimer];
-    }else {
+    }else if ([sender isEqual:self.hideButton]) {
         [self.navController uploadCancelled];
-        [self stopTimer];
-        progress = 0.0f;
+    }else if ([sender isEqual:self.startButton]) {
+        if (self.startButton.isSelected) {
+            [[JMAPIExample sharedClient] suspendOperation];
+            self.startButton.selected = NO;
+        }else {
+            [[JMAPIExample sharedClient] startOperation];
+            
+            if (!self.navController.isShowingUploadProgressView) {
+                [self.navController uploadStarted];
+            }
+            
+            self.startButton.selected = YES;
+        }
     }
 }
 
-- (void)startTimer {
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.25
-                                             target:self
-                                           selector:@selector(updateProgress:)
-                                           userInfo:nil
-                                            repeats:YES];
-}
-
-- (void)stopTimer {
-    if ([timer isValid]) {
-        [timer invalidate];
-    }
-    
-    timer = nil;
-}
 
 - (void)updateProgress:(NSTimer*)sender {
-    int random = arc4random() % 101;
+    int random = arc4random() % 100;
     
     [self.navController setUploadProgress:random];
     
     if (random >= 100.0) {
-        [self stopTimer];
-        progress = 0.0f;
         [self.navController uploadFinished];
     }
 }
@@ -81,7 +70,6 @@
 
 - (void)cancelUploadReceived:(NSNotification*)notification {
     [self.navController uploadCancelled];
-    [self stopTimer];
 }
 
 - (void)retryUploadReceived:(NSNotification*)notification {
