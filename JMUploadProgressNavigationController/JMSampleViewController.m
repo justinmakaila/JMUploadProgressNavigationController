@@ -37,19 +37,20 @@
 - (IBAction)buttonPressed:(UIButton*)sender {
     if ([sender isEqual:self.showButton]) {
         [self.navController uploadStarted];
+        [[JMAPIExample sharedClient] startOperation];
     }else if ([sender isEqual:self.hideButton]) {
         [self.navController uploadCancelled];
+        [[JMAPIExample sharedClient] cancelOperation];
     }else if ([sender isEqual:self.startButton]) {
         if (self.startButton.isSelected) {
             [[JMAPIExample sharedClient] suspendOperation];
             self.startButton.selected = NO;
         }else {
-            [[JMAPIExample sharedClient] startOperation];
-            
             if (!self.navController.isShowingUploadProgressView) {
                 [self.navController uploadStarted];
             }
             
+            [[JMAPIExample sharedClient] startOperation];
             self.startButton.selected = YES;
         }
     }

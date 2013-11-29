@@ -15,6 +15,10 @@
  *  Indicates whether or not the progress view is displayed
  */
 @property (readonly, nonatomic, getter = isShowingUploadProgressView) BOOL showingUploadProgressView;
+@property (readonly, nonatomic, getter = isRunning) BOOL running;
+@property (readonly, nonatomic, getter = isPaused) BOOL paused;
+@property (readonly, nonatomic, getter = isCancelled) BOOL cancelled;
+@property (readonly, nonatomic, getter = didFail) BOOL failed;
 
 /**
  *  Called when the upload is started, shows the progress view

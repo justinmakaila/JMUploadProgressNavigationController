@@ -41,6 +41,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)resetState {
+    self.pauseButton.selected = NO;
+}
+
 - (IBAction)buttonPressed:(UIButton*)sender {
     if (sender == self.pauseButton) {
         if (self.pauseButton.isSelected) {
@@ -53,6 +57,7 @@
     }else if (sender == self.cancelButton) {
         [[JMAPIExample sharedClient] cancelOperation];
         [self.navController uploadCancelled];
+        [self resetState];
     }else if (sender == self.failButton) {
         [[JMAPIExample sharedClient] suspendOperation];
         [self.navController uploadFailed];
