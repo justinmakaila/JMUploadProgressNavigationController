@@ -1,5 +1,5 @@
 //
-//  PMasterViewController.h
+//  JMUploadProgressViewController.h
 //  JMUploadProgressNavigationController
 //
 //  Created by Justin Makaila on 11/28/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PMasterViewController : UITableViewController
+@interface JMUploadProgressViewController : UINavigationController
 
 @end
