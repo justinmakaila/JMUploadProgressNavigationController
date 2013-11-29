@@ -1,0 +1,2 @@
+dependencies: \
+  /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/JMUploadProgressNavigationController/JMUploadProgressNavigationController-Prefix.pch
