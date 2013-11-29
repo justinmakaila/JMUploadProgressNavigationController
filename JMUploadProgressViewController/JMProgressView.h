@@ -29,8 +29,8 @@
 @property (strong, nonatomic) UILabel *progressLabel;
 @property (strong, nonatomic) UILabel *messageLabel;
 
-@property (weak, nonatomic) UIButton *cancelButton;
-@property (weak, nonatomic) UIButton *retryButton;
+@property (strong, nonatomic) UIButton *cancelButton;
+@property (strong, nonatomic) UIButton *retryButton;
 
 @property (strong, nonatomic) NSString *uploadingMessage;
 @property (strong, nonatomic) NSString *cancelledMessage;
