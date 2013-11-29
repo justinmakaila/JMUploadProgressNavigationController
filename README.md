@@ -5,6 +5,11 @@ UINavigationController subclass that includes methods to show/hide an upload pro
 
 ##Usage:
 
+###Installation:
+Cocoapods:
+`pod 'JMUploadProgressNavigationController'`
+
+###API
 
 + Indicates whether or not the progress view is displayed  
 `@property (readonly, nonatomic, getter = isShowingUploadProgressView) BOOL showingUploadProgressView;`
