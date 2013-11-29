@@ -1,88 +1,0 @@
-TPods
-v6
-r1
-cCheck dependencies
-cCompileC /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a normal i386
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000526717230000000000A92BC0
-t1382487843
-s11086784
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
-c00000000528179B10000000000000176
-t1384217009
-s374
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
-c00000000523A8AB100000000000003B5
-t1379568305
-s949
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
-c000000005267173A00000000000001A0
-t1382487866
-s416
-
-N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include/module.map
-c00000000523A8AEE0000000000000AC9
-t1379568366
-s2761
-
-N/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o
-t1385696461
-s3488
-
-N/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods.LinkFileList
-c0000000052980CCC00000000000000C0
-t1385696460
-s192
-
-N/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods-iOS-blur.a
-c0000000052980CCC000000000000D018
-t1385696460
-s53272
-
-N/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a
-t2
-s0
-
-N/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m
-c0000000052980CA60000000000000070
-t1385696422
-s112
-
-CBuild AST from /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m
-r0
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesaa0fac4c4448b841^0822af4c4448b841^---0#1#1#--18"Check dependencies36"85B9EE10-46E7-4BDB-9402-2054DB2CBD35-
-
-CCompileC /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407389260.684687
-e407389261.505224
-r1
-xCompileC
-x/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o
-x/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m281"CompileC /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerfa5eaf4c4448b841^8f56814d4448b841^---0#0#1#-19%DVTDocumentLocation2@119"file:///Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m0000000000000000^4365"CompileC /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fmodules -fmodules-cache-path=/Users/jmakaila/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-generated-files.hmap -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-own-target-headers.hmap -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-all-target-headers.hmap -iquote /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-project-headers.hmap -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/include -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods/Headers -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods/Headers/iOS-blur -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/DerivedSources/i386 -I/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/DerivedSources -F/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator -MMD -MT dependencies -MF /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.d --serialize-diagnostics /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.dia -c /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods/Pods-dummy.m -o /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o36"A200D0CD-BD0D-4462-9A34-27E441C07BB6-
-b890A503C-8694-4BE4-A798-4759FDE329D3
-
-CLibtool /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a normal i386
-s407389261.505834
-e407389261.528473
-r1
-xLibtool
-x/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a
-xnormal
-xi386
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection161"Libtool /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a normal i386161"Libtool /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a normal i386658e814d4448b841^d45f874d4448b841^---0#0#1#--1281"Libtool /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a normal i386    cd /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Pods    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator -filelist /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods.LinkFileList -framework Foundation -lPods-iOS-blur -o /Users/jmakaila/Documents/Development/Present/iOS/Modules/JMUploadProgressNavigationController/Build/Products/Debug-iphonesimulator/libPods.a36"3C282A9E-B13F-498D-9BBA-CD6E43F366D1-
-b890A503C-8694-4BE4-A798-4759FDE329D3
-
