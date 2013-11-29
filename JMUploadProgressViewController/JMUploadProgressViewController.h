@@ -11,13 +11,47 @@
 
 @interface JMUploadProgressViewController : UINavigationController <JMProgressViewDelegate>
 
+/**
+ *  Indicates whether or not the progress view is displayed
+ */
 @property (readonly, nonatomic, getter = isShowingUploadProgressView) BOOL showingUploadProgressView;
 
+/**
+ *  Called when the upload is started, shows the progress view
+ */
 - (void)uploadStarted;
+
+/**
+ *  Used to update the progress view
+ *
+ *  @param progress A number between 0 and 100 representing the progress completed
+ */
 - (void)setUploadProgress:(float)progress;
+
+/**
+ *  Called when an upload is cancelled
+ */
 - (void)uploadCancelled;
+
+- (void)uploadResumed;
+
+/**
+ *  Called when an upload is suspended
+ */
+- (void)uploadPaused;
+
+/**
+ *  Called when an upload fails
+ */
+- (void)uploadFailed;
 
 @end
 
+/**
+ *  Notification posted when the cancel button is pressed
+ */
 extern NSString *const JMCancelUploadNotification;
+/**
+ *  Notification posted when the retry button is pressed
+ */
 extern NSString *const JMRetryUploadNotification;

@@ -9,6 +9,7 @@
 #import "JMProgressView.h"
 
 static NSString *const kUploadingMessage = @"Uploading...";
+static NSString *const kPausedMessage = @"Paused";
 static NSString *const kFailedMessage = @"Failed";
 static NSString *const kCancelledMessage = @"Cancelled";
 static NSString *const kFinishedMessage = @"Finished!";
@@ -27,7 +28,7 @@ static NSString *const kNoProgressMessage = @"0%";
 - (void)baseInit {
     self.clipsToBounds = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     self.tintColor = [UIColor whiteColor];
     
     self.progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 50, 24)];
@@ -73,6 +74,8 @@ static NSString *const kNoProgressMessage = @"0%";
                     action:@selector(retryButtonPressed)
           forControlEvents:UIControlEventTouchUpInside];
     
+    retryButton.enabled = NO;
+    
     self.retryButton = retryButton;
     [self addSubview:self.retryButton];
 }
@@ -98,7 +101,9 @@ static NSString *const kNoProgressMessage = @"0%";
 }
 
 - (void)start {
-    self.progressLabel.text = kNoProgressMessage;
+    if (self.retryButton.isEnabled) {
+        self.retryButton.enabled = NO;
+    }
     
     if (self.uploadingMessage) {
         self.messageLabel.text = self.uploadingMessage;
@@ -113,6 +118,15 @@ static NSString *const kNoProgressMessage = @"0%";
     }else {
         self.messageLabel.text = kCancelledMessage;
     }
+}
+
+- (void)pause {
+    self.messageLabel.text = kPausedMessage;
+}
+
+- (void)failed {
+    self.messageLabel.text = kFailedMessage;
+    self.retryButton.enabled = YES;
 }
 
 #pragma mark - IBActions

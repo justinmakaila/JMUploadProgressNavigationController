@@ -15,8 +15,6 @@
 
 @end
 
-static float kHideProgressViewDelay = 1.0f;
-
 @implementation JMUploadProgressViewController
 
 - (void)viewDidLoad {
@@ -24,24 +22,29 @@ static float kHideProgressViewDelay = 1.0f;
     
     self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
     self.progressView.delegate = self;
-    [self.view insertSubview:self.progressView belowSubview:self.navigationBar];
+    self.progressView.dynamic = NO;
 }
 
 - (void)uploadStarted {
     [self.progressView start];
-
     [self showProgressView];
 }
 
 - (void)uploadCancelled {
     [self.progressView cancel];
+    [self hideProgressView];
+}
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
-        sleep(kHideProgressViewDelay);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self hideProgressView];
-        });
-    });
+- (void)uploadResumed {
+    [self.progressView start];
+}
+
+- (void)uploadPaused {
+    [self.progressView pause];
+}
+
+- (void)uploadFailed {
+    [self.progressView failed];
 }
 
 - (void)setUploadProgress:(float)progress {
@@ -65,6 +68,10 @@ static float kHideProgressViewDelay = 1.0f;
 #pragma mark - Animation Methods
 
 - (void)showProgressView {
+    if (!self.progressView.superview) {
+        [self.view insertSubview:self.progressView belowSubview:self.navigationBar];
+    }
+    
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.progressView.frame = CGRectMake(0, 64, 320, 44);
@@ -83,6 +90,7 @@ static float kHideProgressViewDelay = 1.0f;
                      }completion:^(BOOL finished) {
                          [self setUploadProgress:0.0f];
                          _showingUploadProgressView = NO;
+                         [self.progressView removeFromSuperview];
                      }];
 }
 
