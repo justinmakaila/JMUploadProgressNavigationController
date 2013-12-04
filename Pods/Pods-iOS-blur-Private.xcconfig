@@ -1,5 +1,0 @@
-#include "Pods-iOS-blur.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/iOS-blur" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/iOS-blur"
-OTHER_LDFLAGS = -ObjC ${PODS_IOS_BLUR_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}
