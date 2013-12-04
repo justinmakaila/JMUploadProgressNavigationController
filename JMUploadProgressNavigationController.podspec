@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "justinmakaila" => "justinmakaila@gmail.com" }
   s.platform = :ios, '7.0'
-  s.source       = { :git => "https://github.com/justinmakaila/JMUploadProgressNavigationBar.git", :commit => "2291915a27bb67a3064f825015cd1b13220cd940" }
+  s.source       = { :git => "https://github.com/justinmakaila/JMUploadProgressNavigationBar.git", :commit => "967c5bf9c475e9cc27dd8fee5e922f2c22fcd4cd" }
   s.source_files  = 'Classes', 'JMUploadProgressViewController/**/*.{h,m}'
   s.dependency 'FXBlurView', '~>1.4.4'
 end
