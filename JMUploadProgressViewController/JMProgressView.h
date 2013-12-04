@@ -38,10 +38,10 @@
 @end
 
 /**
- *  The JMProgressView is a FXBlurView (UIView) subclass 
+ *  The JMProgressView is a UIView subclass 
  *  used to keep track of upload progress
  */
-@interface JMProgressView : FXBlurView
+@interface JMProgressView : UIView
 
 /**
  *  The delegate

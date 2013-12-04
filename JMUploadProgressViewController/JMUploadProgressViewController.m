@@ -21,8 +21,6 @@
     [super viewDidLoad];
     
     self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
-    self.progressView.delegate = self;
-    self.progressView.dynamic = NO;
 }
 
 - (void)uploadStarted {
@@ -111,14 +109,10 @@
                      animations:^{
                          self.progressView.frame = CGRectMake(0, 64, 320, 44);
                          _showingUploadProgressView = YES;
-                     }completion:^(BOOL finished) {
-                         self.progressView.dynamic = YES;
-                     }];
+                     }completion:nil];
 }
 
 - (void)hideProgressView {
-    self.progressView.dynamic = NO;
-    
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.progressView.frame = CGRectMake(0, 64, 320, 0);
