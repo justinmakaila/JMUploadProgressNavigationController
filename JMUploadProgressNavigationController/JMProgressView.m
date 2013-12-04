@@ -28,8 +28,7 @@ static NSString *const kNoProgressMessage = @"0%";
 - (void)baseInit {
     self.clipsToBounds = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.backgroundColor = [UIColor clearColor];
-    self.tintColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     self.progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 50, 24)];
     self.progressLabel.text = kNoProgressMessage;
