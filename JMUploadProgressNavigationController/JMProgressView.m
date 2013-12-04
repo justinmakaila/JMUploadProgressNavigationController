@@ -73,6 +73,10 @@ static NSString *const kNoProgressMessage = @"0%";
     [self addSubview:self.retryButton];
 }
 
+- (void)setBackgroundImage:(UIImage *)image {
+    self.backgroundColor = [UIColor colorWithPatternImage:image];
+}
+
 - (void)updateProgressView:(float)progress {
     int progressInt = floor(progress);
     self.progressLabel.text = [NSString stringWithFormat:@"%i%%", progressInt];

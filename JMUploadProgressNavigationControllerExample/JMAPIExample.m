@@ -25,7 +25,6 @@ static const int kProgressIncreaseAmount = 10;
     
     dispatch_once(&onceToken, ^{
         sharedClient = [[JMAPIExample alloc] init];
-        sharedClient.uploadProgress = @0;
     });
     
     return sharedClient;
@@ -35,6 +34,7 @@ static const int kProgressIncreaseAmount = 10;
 
 - (void)startOperation {
     [self resumeTimer];
+    self.uploadProgress = @0;
     self.suspended = NO;
 }
 

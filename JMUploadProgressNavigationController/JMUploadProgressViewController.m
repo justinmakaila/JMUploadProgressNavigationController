@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
+    _showingUploadProgressView = NO;
 }
 
 - (void)uploadStarted {

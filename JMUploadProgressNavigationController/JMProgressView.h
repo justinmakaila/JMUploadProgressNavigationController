@@ -82,6 +82,8 @@
  */
 @property (strong, nonatomic) NSString *finishedMessage;
 
+- (void)setBackgroundImage:(UIImage*)image;
+
 /**
  *  Updates the progress view with the current progress
  *
