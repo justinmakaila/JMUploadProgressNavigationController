@@ -44,38 +44,38 @@
 
 /* Begin PBXFileReference section */
 		1F8C9634F7AC4A9B90DED4EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FAFBADD18492E8D001CBFCC /* JMAPIExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMAPIExample.h; sourceTree = "<group>"; };
-		5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMAPIExample.m; sourceTree = "<group>"; };
-		5FAFBAE218492FAA001CBFCC /* JMExampleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMExampleNavigationController.h; sourceTree = "<group>"; };
-		5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMExampleNavigationController.m; sourceTree = "<group>"; };
+		5FAFBADD18492E8D001CBFCC /* JMAPIExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMAPIExample.h; path = ../JMUploadProgressNavigationControllerExample/JMAPIExample.h; sourceTree = "<group>"; };
+		5FAFBADE18492E8D001CBFCC /* JMAPIExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMAPIExample.m; path = ../JMUploadProgressNavigationControllerExample/JMAPIExample.m; sourceTree = "<group>"; };
+		5FAFBAE218492FAA001CBFCC /* JMExampleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMExampleNavigationController.h; path = ../JMUploadProgressNavigationControllerExample/JMExampleNavigationController.h; sourceTree = "<group>"; };
+		5FAFBAE318492FAA001CBFCC /* JMExampleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMExampleNavigationController.m; path = ../JMUploadProgressNavigationControllerExample/JMExampleNavigationController.m; sourceTree = "<group>"; };
 		5FAFBAE618494044001CBFCC /* retry-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retry-icon.png"; sourceTree = "<group>"; };
 		5FAFBAE818494070001CBFCC /* cancel-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-icon.png"; sourceTree = "<group>"; };
 		5FBE14F3184838AF00B46D4B /* JMUploadProgressNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMUploadProgressNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBE14F6184838AF00B46D4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBE14F8184838AF00B46D4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5FBE14FA184838AF00B46D4B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5FBE14FE184838AF00B46D4B /* JMUploadProgressNavigationController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMUploadProgressNavigationController-Info.plist"; sourceTree = "<group>"; };
+		5FBE14FE184838AF00B46D4B /* JMUploadProgressNavigationController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "JMUploadProgressNavigationController-Info.plist"; path = "../JMUploadProgressNavigationControllerExample/JMUploadProgressNavigationController-Info.plist"; sourceTree = "<group>"; };
 		5FBE1500184838AF00B46D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5FBE1502184838AF00B46D4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5FBE1504184838AF00B46D4B /* JMUploadProgressNavigationController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMUploadProgressNavigationController-Prefix.pch"; sourceTree = "<group>"; };
-		5FBE1505184838AF00B46D4B /* PAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAppDelegate.h; sourceTree = "<group>"; };
-		5FBE1506184838AF00B46D4B /* PAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAppDelegate.m; sourceTree = "<group>"; };
+		5FBE1502184838AF00B46D4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../JMUploadProgressNavigationControllerExample/main.m; sourceTree = "<group>"; };
+		5FBE1504184838AF00B46D4B /* JMUploadProgressNavigationController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JMUploadProgressNavigationController-Prefix.pch"; path = "../JMUploadProgressNavigationControllerExample/JMUploadProgressNavigationController-Prefix.pch"; sourceTree = "<group>"; };
+		5FBE1505184838AF00B46D4B /* PAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PAppDelegate.h; path = JMUploadProgressNavigationControllerExample/PAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5FBE1506184838AF00B46D4B /* PAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PAppDelegate.m; path = ../JMUploadProgressNavigationControllerExample/PAppDelegate.m; sourceTree = "<group>"; };
 		5FBE1509184838B000B46D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5FBE150E184838B000B46D4B /* JMSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSampleViewController.h; sourceTree = "<group>"; };
-		5FBE150F184838B000B46D4B /* JMSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSampleViewController.m; sourceTree = "<group>"; };
-		5FBE1511184838B000B46D4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FBE150E184838B000B46D4B /* JMSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JMSampleViewController.h; path = ../JMUploadProgressNavigationControllerExample/JMSampleViewController.h; sourceTree = "<group>"; };
+		5FBE150F184838B000B46D4B /* JMSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JMSampleViewController.m; path = ../JMUploadProgressNavigationControllerExample/JMSampleViewController.m; sourceTree = "<group>"; };
+		5FBE1511184838B000B46D4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../JMUploadProgressNavigationControllerExample/Images.xcassets; sourceTree = "<group>"; };
 		5FBE1517184838B000B46D4B /* JMUploadProgressNavigationControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMUploadProgressNavigationControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBE1518184838B000B46D4B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5FBE1520184838B000B46D4B /* JMUploadProgressNavigationControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMUploadProgressNavigationControllerTests-Info.plist"; sourceTree = "<group>"; };
 		5FBE1522184838B000B46D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FBE1524184838B000B46D4B /* JMUploadProgressNavigationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMUploadProgressNavigationControllerTests.m; sourceTree = "<group>"; };
-		5FBE152F184839F300B46D4B /* JMUploadProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMUploadProgressViewController.h; path = JMUploadProgressViewController/JMUploadProgressViewController.h; sourceTree = SOURCE_ROOT; };
-		5FBE1530184839F300B46D4B /* JMUploadProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMUploadProgressViewController.m; path = JMUploadProgressViewController/JMUploadProgressViewController.m; sourceTree = SOURCE_ROOT; };
-		5FBE153318483B2A00B46D4B /* JMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMProgressView.h; path = JMUploadProgressViewController/JMProgressView.h; sourceTree = SOURCE_ROOT; };
-		5FBE153418483B2A00B46D4B /* JMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMProgressView.m; path = JMUploadProgressViewController/JMProgressView.m; sourceTree = SOURCE_ROOT; };
-		5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EQdfPqB.jpg; sourceTree = "<group>"; };
-		5FBE15381849241200B46D4B /* JMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTestViewController.h; sourceTree = "<group>"; };
-		5FBE15391849241200B46D4B /* JMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTestViewController.m; sourceTree = "<group>"; };
+		5FBE152F184839F300B46D4B /* JMUploadProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMUploadProgressViewController.h; sourceTree = "<group>"; };
+		5FBE1530184839F300B46D4B /* JMUploadProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMUploadProgressViewController.m; path = JMUploadProgressNavigationController/JMUploadProgressViewController.m; sourceTree = SOURCE_ROOT; };
+		5FBE153318483B2A00B46D4B /* JMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMProgressView.h; path = JMUploadProgressNavigationController/JMProgressView.h; sourceTree = SOURCE_ROOT; };
+		5FBE153418483B2A00B46D4B /* JMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMProgressView.m; path = JMUploadProgressNavigationController/JMProgressView.m; sourceTree = SOURCE_ROOT; };
+		5FBE153618485E9D00B46D4B /* EQdfPqB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = EQdfPqB.jpg; path = ../JMUploadProgressNavigationControllerExample/EQdfPqB.jpg; sourceTree = "<group>"; };
+		5FBE15381849241200B46D4B /* JMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMTestViewController.h; path = ../JMUploadProgressNavigationControllerExample/JMTestViewController.h; sourceTree = "<group>"; };
+		5FBE15391849241200B46D4B /* JMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMTestViewController.m; path = ../JMUploadProgressNavigationControllerExample/JMTestViewController.m; sourceTree = "<group>"; };
 		ABDA32164C7345A08A15F55A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -405,6 +405,7 @@
 				5FBE1500184838AF00B46D4B /* en */,
 			);
 			name = InfoPlist.strings;
+			path = ../JMUploadProgressNavigationControllerExample;
 			sourceTree = "<group>";
 		};
 		5FBE1508184838B000B46D4B /* Main.storyboard */ = {
@@ -413,6 +414,7 @@
 				5FBE1509184838B000B46D4B /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../JMUploadProgressNavigationControllerExample;
 			sourceTree = "<group>";
 		};
 		5FBE1521184838B000B46D4B /* InfoPlist.strings */ = {
