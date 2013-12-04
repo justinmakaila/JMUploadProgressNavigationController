@@ -26,6 +26,11 @@
 - (void)uploadStarted;
 
 /**
+ *  Called when an upload is finished, hides the progress view
+ */
+- (void)uploadFinished;
+
+/**
  *  Used to update the progress view
  *
  *  @param progress A number between 0 and 100 representing the progress completed

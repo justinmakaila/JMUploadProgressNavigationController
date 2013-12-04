@@ -27,8 +27,6 @@
     [self.progressView start];
     [self showProgressView];
     
-    _failed = NO;
-    _cancelled = NO;
     _paused = NO;
     _running = YES;
 }
@@ -38,41 +36,28 @@
     [self hideProgressView];
     
     _cancelled = YES;
-    
-    if (self.isRunning) {
-        _running = NO;
-    }
+    _running = NO;
 }
 
 - (void)uploadResumed {
     [self.progressView start];
     
-    if (!self.isRunning) {
-        _running = YES;
-    }
-    
-    if (self.isPaused) {
-        _paused = NO;
-    }
+    _running = YES;
+    _paused = NO;
 }
 
 - (void)uploadPaused {
     [self.progressView pause];
     
     _paused = YES;
-    
-    if (self.isRunning) {
-        _running = NO;
-    }
+    _running = NO;
 }
 
 - (void)uploadFailed {
     [self.progressView failed];
-    _failed = YES;
     
-    if (self.isRunning) {
-        _running = NO;
-    }
+    _failed = YES;
+    _running = NO;
 }
 
 - (void)setUploadProgress:(float)progress {
@@ -85,8 +70,6 @@
     [self hideProgressView];
     
     _running = NO;
-    _failed = NO;
-    _cancelled = NO;
     _paused = NO;
 }
 
