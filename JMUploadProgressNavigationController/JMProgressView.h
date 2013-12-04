@@ -15,11 +15,6 @@
 @protocol JMProgressViewDelegate <NSObject>
 
 /**
- *  Called when an upload finished
- */
-- (void)uploadFinished;
-
-/**
  *  Called when the retry button is pressed
  */
 - (void)retryButtonPressed;

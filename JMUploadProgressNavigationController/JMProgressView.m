@@ -86,10 +86,6 @@ static NSString *const kNoProgressMessage = @"0%";
         }else {
             self.messageLabel.text = kFinishedMessage;
         }
-        
-        if ([_delegate respondsToSelector:@selector(uploadFinished)]) {
-            [_delegate uploadFinished];
-        }
     }
     
 }
