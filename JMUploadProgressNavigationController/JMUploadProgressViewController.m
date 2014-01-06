@@ -25,7 +25,7 @@
 
 - (void)viewDidLayoutSubviews {
     if (!self.progressView) {
-        if (self.positionBottom) {
+        if (!self.positionBottom) {
             self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
         }else {
             self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 0)];

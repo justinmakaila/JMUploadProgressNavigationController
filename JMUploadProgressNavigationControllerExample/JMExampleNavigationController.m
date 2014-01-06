@@ -23,6 +23,8 @@ static void *pUploadStatusContext = &pUploadStatusContext;
     [super viewDidLoad];
 
     self.apiClient = [JMAPIExample sharedClient];
+#warning Change to NO to see the progress view at the top of the screen
+    self.positionBottom = YES;
     
     [self addObserver:self
            forKeyPath:@"self.apiClient.uploadProgress"

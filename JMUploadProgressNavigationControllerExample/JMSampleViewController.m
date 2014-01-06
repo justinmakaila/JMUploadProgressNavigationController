@@ -21,7 +21,6 @@
     [super viewDidLoad];
     self.title = @"JMUploadProgressViewController";
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.navController = (JMExampleNavigationController*)self.navigationController;
 }
 
