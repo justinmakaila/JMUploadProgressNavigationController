@@ -11,6 +11,8 @@
 
 @interface JMUploadProgressViewController : UINavigationController <JMProgressViewDelegate>
 
+@property (nonatomic) BOOL positionBottom;
+
 /**
  *  Indicates whether or not the progress view is displayed
  */

@@ -20,8 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
     _showingUploadProgressView = NO;
+}
+
+- (void)viewDidLayoutSubviews {
+    if (!self.progressView) {
+        if (self.positionBottom) {
+            self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
+        }else {
+            self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 0)];
+        }
+    }
 }
 
 - (void)uploadStarted {
@@ -91,7 +100,12 @@
     
     [UIView animateWithDuration:0.5
                      animations:^{
-                         self.progressView.frame = CGRectMake(0, 64, 320, 44);
+                         if (self.positionBottom) {
+                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - 44, 320, 44);
+                         }else {
+                             self.progressView.frame = CGRectMake(0, 64, 320, 44);
+                         }
+                         
                          _showingUploadProgressView = YES;
                      }completion:nil];
 }
@@ -99,7 +113,11 @@
 - (void)hideProgressView {
     [UIView animateWithDuration:0.5
                      animations:^{
-                         self.progressView.frame = CGRectMake(0, 64, 320, 0);
+                         if (self.positionBottom) {
+                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 44);
+                         }else {
+                             self.progressView.frame = CGRectMake(0, 64, 320, 0);
+                         }
                      }completion:^(BOOL finished) {
                          [self setUploadProgress:0.0f];
                          _showingUploadProgressView = NO;
