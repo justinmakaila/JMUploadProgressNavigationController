@@ -35,24 +35,32 @@
 
 - (IBAction)buttonPressed:(UIButton*)sender {
     if ([sender isEqual:self.showButton]) {
-        [self.navController uploadStarted];
-        [[JMAPIExample sharedClient] startOperation];
+        [self startUpload];
     }else if ([sender isEqual:self.hideButton]) {
-        [self.navController uploadCancelled];
-        [[JMAPIExample sharedClient] cancelOperation];
+        [self cancelUpload];
     }else if ([sender isEqual:self.startButton]) {
         if (self.startButton.isSelected) {
             [[JMAPIExample sharedClient] suspendOperation];
             self.startButton.selected = NO;
         }else {
             if (!self.navController.isShowingUploadProgressView) {
-                [self.navController uploadStarted];
+                [self startUpload];
             }
             
-            [[JMAPIExample sharedClient] startOperation];
             self.startButton.selected = YES;
         }
     }
+}
+
+- (void)startUpload {
+    [self.navController uploadStarted];
+    [self.navController setProgressViewImage:[UIImage imageNamed:@"EQdfPqB.jpg"]];
+    [[JMAPIExample sharedClient] startOperation];
+}
+
+- (void)cancelUpload {
+    [self.navController uploadCancelled];
+    [[JMAPIExample sharedClient] cancelOperation];
 }
 
 #pragma mark - Notifications

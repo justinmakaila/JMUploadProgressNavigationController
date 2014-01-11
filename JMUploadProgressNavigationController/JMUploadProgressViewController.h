@@ -28,6 +28,26 @@
 - (void)uploadStarted;
 
 /**
+ *  Called when an upload is paused
+ */
+- (void)uploadPaused;
+
+/**
+ *  Called when an upload is resumed
+ */
+- (void)uploadResumed;
+
+/**
+ *  Called when an upload is cancelled
+ */
+- (void)uploadCancelled;
+
+/**
+ *  Called when an upload fails
+ */
+- (void)uploadFailed;
+
+/**
  *  Called when an upload is finished, hides the progress view
  */
 - (void)uploadFinished;
@@ -40,24 +60,18 @@
 - (void)setUploadProgress:(float)progress;
 
 /**
- *  Called when an upload is cancelled
+ *  Set the progress view image to the image
+ *
+ *  @param image The image to load
  */
-- (void)uploadCancelled;
+- (void)setProgressViewImage:(UIImage*)image;
 
 /**
- *  Called when an upload is resumed
+ *  Set the progress view image to the image at url
+ *
+ *  @param url The URL where the image is located
  */
-- (void)uploadResumed;
-
-/**
- *  Called when an upload is paused
- */
-- (void)uploadPaused;
-
-/**
- *  Called when an upload fails
- */
-- (void)uploadFailed;
+- (void)setProgressViewImageWithURL:(NSURL*)url;
 
 @end
 
@@ -65,7 +79,10 @@
  *  Notification posted when the cancel button is pressed
  */
 extern NSString *const JMCancelUploadNotification;
+
 /**
  *  Notification posted when the retry button is pressed
  */
 extern NSString *const JMRetryUploadNotification;
+
+extern NSString *const JMResumeUploadNotification;

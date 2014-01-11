@@ -49,7 +49,6 @@ static const int kProgressIncreaseAmount = 10;
     }
     
     timer = nil;
-    self.uploadProgress = @0;
 }
 
 - (void)updateProgress:(NSTimer*)sender {

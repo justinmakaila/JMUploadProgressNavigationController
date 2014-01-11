@@ -9,6 +9,9 @@
 #import "JMUploadProgressViewController.h"
 #import "JMProgressView.h"
 
+static CGFloat kStatusBarHeight = 20.0f;
+static CGFloat kProgressViewHeight = 70.0f;
+
 @interface JMUploadProgressViewController ()
 
 @property (strong, nonatomic) JMProgressView *progressView;
@@ -26,11 +29,13 @@
 - (void)viewDidLayoutSubviews {
     if (!self.progressView) {
         if (!self.positionBottom) {
-            self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
+            self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, kProgressViewHeight, 320, 0)];
         }else {
             self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 0)];
         }
     }
+    
+    [super viewDidLayoutSubviews];
 }
 
 - (void)uploadStarted {
@@ -70,8 +75,20 @@
     _running = NO;
 }
 
+- (void)requestUploadPermission {
+    [self.progressView requestUploadPermission];
+}
+
 - (void)setUploadProgress:(float)progress {
     [self.progressView updateProgressView:progress];
+}
+
+- (void)setProgressViewImage:(UIImage *)image {
+    self.progressView.imageView.image = image;
+}
+
+- (void)setProgressViewImageWithURL:(NSURL*)url {
+    [self.progressView.imageView setImageWithURL:url placeholderImage:nil];
 }
 
 #pragma mark - JMProgressViewDelegate
@@ -87,8 +104,12 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:JMCancelUploadNotification object:nil];
 }
 
-- (void)retryButtonPressed {
-    [[NSNotificationCenter defaultCenter] postNotificationName:JMRetryUploadNotification object:nil];
+- (void)actionButtonPressed:(NSInteger)tag {
+    if (tag == 700) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JMRetryUploadNotification object:nil];
+    }else if (tag == 800) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JMResumeUploadNotification object:nil];
+    }
 }
 
 #pragma mark - Animation Methods
@@ -101,9 +122,9 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          if (self.positionBottom) {
-                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - 44, 320, 44);
+                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - kProgressViewHeight, 320, kProgressViewHeight);
                          }else {
-                             self.progressView.frame = CGRectMake(0, 64, 320, 44);
+                             self.progressView.frame = CGRectMake(0, kProgressViewHeight, 320, 60);
                          }
                          
                          _showingUploadProgressView = YES;
@@ -114,9 +135,9 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          if (self.positionBottom) {
-                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 44);
+                             self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, kProgressViewHeight);
                          }else {
-                             self.progressView.frame = CGRectMake(0, 64, 320, 0);
+                             self.progressView.frame = CGRectMake(0, kProgressViewHeight, 320, 0);
                          }
                      }completion:^(BOOL finished) {
                          [self setUploadProgress:0.0f];
@@ -129,3 +150,4 @@
 
 NSString *const JMCancelUploadNotification = @"JMCancelUploadNotification";
 NSString *const JMRetryUploadNotification = @"JMRetryUploadNotification";
+NSString *const JMResumeUploadNotification = @"JMResumeUploadNotification";
