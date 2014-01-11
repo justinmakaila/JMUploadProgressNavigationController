@@ -53,6 +53,11 @@
 - (void)uploadFinished;
 
 /**
+ *  Shows the progress view in a state requesting user permission
+ */
+- (void)requestUserPermission;
+
+/**
  *  Used to update the progress view
  *
  *  @param progress A number between 0 and 100 representing the progress completed
@@ -72,6 +77,16 @@
  *  @param url The URL where the image is located
  */
 - (void)setProgressViewImageWithURL:(NSURL*)url;
+
+/**
+ *  Shows the progress view
+ */
+- (void)showProgressView;
+
+/**
+ *  Hides the progress view
+ */
+- (void)hideProgressView;
 
 @end
 

@@ -11,14 +11,6 @@
 #import <LDProgressView.h>
 #import <UIKit+AFNetworking.h>
 
-typedef enum {
-    kJMSwipeDirectionUp = 0,
-    kJMSwipeDirectionCenter,
-    kJMSwipeDirectionLeft,
-    kJMSwipeDirectionRight,
-    kJMSwipeDirectionDown
-} JMSwipeDirection;
-
 /**
  *  The delegate for JMProgressView
  */
@@ -73,6 +65,8 @@ typedef enum {
  */
 @property (nonatomic, getter = isDragging) BOOL dragging;
 
+@property (nonatomic, getter = isOpen) BOOL open;
+
 /**
  *  Updates the progress view with the current progress
  *
@@ -100,6 +94,12 @@ typedef enum {
  */
 - (void)failed;
 
+/**
+ *  Presents the message and action button requiring user permission to upload
+ */
 - (void)requestUploadPermission;
+
+- (void)animateToClose;
+- (void)animateToOpen;
 
 @end

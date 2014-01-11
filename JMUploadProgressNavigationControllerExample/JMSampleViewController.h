@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *showButton;
 @property (weak, nonatomic) IBOutlet UIButton *hideButton;
+@property (weak, nonatomic) IBOutlet UIButton *requestUserPermissionButton;
 
 @end

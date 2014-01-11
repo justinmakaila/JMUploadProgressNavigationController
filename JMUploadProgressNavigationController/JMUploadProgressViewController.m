@@ -9,7 +9,6 @@
 #import "JMUploadProgressViewController.h"
 #import "JMProgressView.h"
 
-static CGFloat kStatusBarHeight = 20.0f;
 static CGFloat kProgressViewHeight = 70.0f;
 
 @interface JMUploadProgressViewController ()
@@ -21,9 +20,9 @@ static CGFloat kProgressViewHeight = 70.0f;
 @implementation JMUploadProgressViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
     _showingUploadProgressView = NO;
+    
+    [super viewDidLoad];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -33,6 +32,8 @@ static CGFloat kProgressViewHeight = 70.0f;
         }else {
             self.progressView = [[JMProgressView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, 0)];
         }
+        
+        self.progressView.delegate = self;
     }
     
     [super viewDidLayoutSubviews];
@@ -40,7 +41,10 @@ static CGFloat kProgressViewHeight = 70.0f;
 
 - (void)uploadStarted {
     [self.progressView start];
-    [self showProgressView];
+    
+    if (!self.isShowingUploadProgressView) {
+        [self showProgressView];
+    }
     
     _paused = NO;
     _running = YES;
@@ -48,7 +52,6 @@ static CGFloat kProgressViewHeight = 70.0f;
 
 - (void)uploadCancelled {
     [self.progressView cancel];
-    [self hideProgressView];
     
     _cancelled = YES;
     _running = NO;
@@ -75,7 +78,11 @@ static CGFloat kProgressViewHeight = 70.0f;
     _running = NO;
 }
 
-- (void)requestUploadPermission {
+- (void)requestUserPermission {
+    if (!self.isShowingUploadProgressView) {
+        [self showProgressView];
+    }
+    
     [self.progressView requestUploadPermission];
 }
 
@@ -138,6 +145,10 @@ static CGFloat kProgressViewHeight = 70.0f;
                              self.progressView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), 320, kProgressViewHeight);
                          }else {
                              self.progressView.frame = CGRectMake(0, kProgressViewHeight, 320, 0);
+                         }
+                         
+                         if (self.progressView.isOpen) {
+                             [self.progressView animateToClose];
                          }
                      }completion:^(BOOL finished) {
                          [self setUploadProgress:0.0f];

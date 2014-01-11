@@ -35,9 +35,13 @@
 
 - (IBAction)buttonPressed:(UIButton*)sender {
     if ([sender isEqual:self.showButton]) {
-        [self startUpload];
+        [self.navController showProgressView];
     }else if ([sender isEqual:self.hideButton]) {
-        [self cancelUpload];
+        if (self.navController.isRunning) {
+            [self.navController uploadCancelled];
+        }
+        
+        [self.navController hideProgressView];
     }else if ([sender isEqual:self.startButton]) {
         if (self.startButton.isSelected) {
             [[JMAPIExample sharedClient] suspendOperation];
@@ -49,6 +53,8 @@
             
             self.startButton.selected = YES;
         }
+    }else if ([sender isEqual:self.requestUserPermissionButton]) {
+        [self.navController requestUserPermission];
     }
 }
 

@@ -21,6 +21,10 @@ static void *pUploadStatusContext = &pUploadStatusContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelUpload) name:JMCancelUploadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(retryUpload) name:JMRetryUploadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resumeUpload) name:JMResumeUploadNotification object:nil];
 
     self.apiClient = [JMAPIExample sharedClient];
 #warning Change to NO to see the progress view at the top of the screen
@@ -35,6 +39,24 @@ static void *pUploadStatusContext = &pUploadStatusContext;
            forKeyPath:@"self.apiClient.suspended"
               options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
               context:pUploadStatusContext];
+}
+
+- (void)cancelUpload {
+    NSLog(@"Cancel upload");
+    [self.apiClient cancelOperation];
+    [self uploadCancelled];
+}
+
+- (void)retryUpload {
+    NSLog(@"Retry upload");
+    [self.apiClient startOperation];
+    [self uploadStarted];
+}
+
+- (void)resumeUpload {
+    NSLog(@"Resume upload");
+    [self.apiClient startOperation];
+    [self uploadStarted];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

@@ -9,6 +9,14 @@
 #import "JMProgressView.h"
 #import "UIColor+Hex.h"
 
+typedef enum {
+    kJMSwipeDirectionUp = 0,
+    kJMSwipeDirectionCenter,
+    kJMSwipeDirectionLeft,
+    kJMSwipeDirectionRight,
+    kJMSwipeDirectionDown
+} JMSwipeDirection;
+
 /**
  *  Percentage limit to trigger the first action
  */
@@ -89,15 +97,15 @@ static NSString *const kGoButtonText = @"Go";
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.backgroundColor = [UIColor colorWithHexString:@"212121"];
     
-    self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.cancelButton.frame = CGRectMake(320, CGRectGetMidY(self.bounds) - 15, 30, 30);
-    [self.cancelButton setTitle:@"X" forState:UIControlStateNormal];
-    [self addSubview:self.cancelButton];
-    
-    self.contentView = [[UIView alloc] initWithFrame:self.bounds];
+    self.contentView = [[UIView alloc] init];
     self.contentView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     self.contentView.backgroundColor = [UIColor colorWithHexString:@"212121"];
     [self addSubview:self.contentView];
+    
+    self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.cancelButton setTitle:@"X" forState:UIControlStateNormal];
+    [self.cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:self.cancelButton];
     
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
     self.imageView.layer.cornerRadius = 4.0f;
@@ -134,7 +142,15 @@ static NSString *const kGoButtonText = @"Go";
     self.actionButton.backgroundColor = [UIColor blackColor];
     self.actionButton.titleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     self.actionButton.hidden = YES;
+    [self.actionButton addTarget:self action:@selector(actionButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.progressView addSubview:self.actionButton];
+}
+
+- (void)layoutSubviews {
+    self.contentView.frame = CGRectMake(CGRectGetMinX(self.bounds), CGRectGetMinY(self.bounds), 390, CGRectGetHeight(self.bounds));
+    self.cancelButton.frame = CGRectMake(370, (CGRectGetHeight(self.bounds) / 2) - 15, 30, 30);
+    
+    [super layoutSubviews];
 }
 
 - (void)setBackgroundImage:(UIImage *)image {
@@ -214,8 +230,8 @@ static NSString *const kGoButtonText = @"Go";
             return;
         }
         
-        CGPoint newCenter = { self.contentView.center.x + translation.x, self.contentView.center.y };
-        self.contentView.center = newCenter;
+        CGPoint newContentViewCenter = { self.contentView.center.x + translation.x, self.contentView.center.y };
+        self.contentView.center = newContentViewCenter;
         
         [gesture setTranslation:CGPointZero inView:self];
     }else if (state == UIGestureRecognizerStateEnded || state == UIGestureRecognizerStateEnded) {
@@ -224,9 +240,9 @@ static NSString *const kGoButtonText = @"Go";
         currentPercentage = percentage;
         
         if (direction == kJMSwipeDirectionLeft && self.contentView.center.x < self.center.x) {
-            [self animateToDelete];
+            [self animateToOpen];
         }else {
-            [self bounceToOrigin];
+            [self animateToClose];
         }
     }
 }
@@ -237,10 +253,8 @@ static NSString *const kGoButtonText = @"Go";
     [_delegate actionButtonPressed:sender.tag];
 }
 
-- (void)cancelButtonPressed {
-    if ([_delegate respondsToSelector:@selector(cancelButtonPressed)]) {
-        [_delegate cancelButtonPressed];
-    }
+- (void)cancelButtonPressed:(UIButton*)sender {
+    [_delegate cancelButtonPressed];
 }
 
 #pragma mark - Utilities
@@ -283,7 +297,7 @@ static NSString *const kGoButtonText = @"Go";
 
 #pragma mark - Animations
 
--(void)bounceToOrigin {
+-(void)animateToClose {
     CGFloat bounceDistance = kBounceAmplitude * currentPercentage;
     [UIView animateWithDuration:kBounceDuration1
                           delay:0
@@ -293,9 +307,7 @@ static NSString *const kGoButtonText = @"Go";
                          frame.origin.x = -bounceDistance;
                          self.contentView.frame = frame;
                          
-                         CGRect cancelButtonFrame = self.cancelButton.frame;
-                         cancelButtonFrame.origin.x = 320;
-                         self.cancelButton.frame = cancelButtonFrame;
+                         self.open = NO;
                      }completion:^(BOOL finished) {
                          [UIView animateWithDuration:kBounceDuration2
                                                delay:0
@@ -308,17 +320,15 @@ static NSString *const kGoButtonText = @"Go";
                      }];
 }
 
--(void)animateToDelete {
+-(void)animateToOpen {
     [UIView animateWithDuration:kBounceDuration1
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         CGPoint center = { self.center.x - 100, self.contentView.center.y };
-                         self.contentView.center = center;
+                         CGPoint contentViewCenter = { self.center.x - 100, self.contentView.center.y };
+                         self.contentView.center = contentViewCenter;
                          
-                         CGRect cancelButtonFrame = self.cancelButton.frame;
-                         cancelButtonFrame.origin.x = CGRectGetMinX(cancelButtonFrame) - 100;
-                         self.cancelButton.frame = cancelButtonFrame;
+                         self.open = YES;
                      }completion:nil];
 }
 

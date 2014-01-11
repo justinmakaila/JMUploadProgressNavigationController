@@ -61,6 +61,11 @@ static const int kProgressIncreaseAmount = 10;
 }
 
 - (void)resumeTimer {
+    if (timer.isValid) {
+        [timer invalidate];
+        timer = nil;
+    }
+    
     timer = [NSTimer scheduledTimerWithTimeInterval:kTimerUpdateDelay
                                              target:self
                                            selector:@selector(updateProgress:)
