@@ -113,9 +113,9 @@ static CGFloat kProgressViewHeight = 70.0f;
 
 - (void)actionButtonPressed:(NSInteger)tag {
     if (tag == 700) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:JMRetryUploadNotification object:nil];
-    }else if (tag == 800) {
         [[NSNotificationCenter defaultCenter] postNotificationName:JMResumeUploadNotification object:nil];
+    }else if (tag == 800) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JMRetryUploadNotification object:nil];
     }
 }
 
