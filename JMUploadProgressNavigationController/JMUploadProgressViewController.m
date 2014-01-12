@@ -107,18 +107,6 @@ static CGFloat kProgressViewHeight = 70.0f;
     _paused = NO;
 }
 
-- (void)cancelButtonPressed {
-    [[NSNotificationCenter defaultCenter] postNotificationName:JMCancelUploadNotification object:nil];
-}
-
-- (void)actionButtonPressed:(NSInteger)tag {
-    if (tag == 700) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:JMResumeUploadNotification object:nil];
-    }else if (tag == 800) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:JMRetryUploadNotification object:nil];
-    }
-}
-
 #pragma mark - Animation Methods
 
 - (void)showProgressView {
