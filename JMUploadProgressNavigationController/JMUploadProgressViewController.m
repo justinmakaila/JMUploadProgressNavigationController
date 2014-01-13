@@ -78,7 +78,7 @@ static CGFloat kProgressViewHeight = 70.0f;
     _running = NO;
 }
 
-- (void)requestUserPermission {
+- (void)requestUploadPermission {
     if (!self.isShowingUploadProgressView) {
         [self showProgressView];
     }
@@ -97,8 +97,6 @@ static CGFloat kProgressViewHeight = 70.0f;
 - (void)setProgressViewImageWithURL:(NSURL*)url {
     [self.progressView.imageView setImageWithURL:url placeholderImage:nil];
 }
-
-#pragma mark - JMProgressViewDelegate
 
 - (void)uploadFinished {
     [self hideProgressView];
@@ -146,7 +144,3 @@ static CGFloat kProgressViewHeight = 70.0f;
 }
 
 @end
-
-NSString *const JMCancelUploadNotification = @"JMCancelUploadNotification";
-NSString *const JMRetryUploadNotification = @"JMRetryUploadNotification";
-NSString *const JMResumeUploadNotification = @"JMResumeUploadNotification";

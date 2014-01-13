@@ -55,7 +55,7 @@
 /**
  *  Shows the progress view in a state requesting user permission
  */
-- (void)requestUserPermission;
+- (void)requestUploadPermission;
 
 /**
  *  Used to update the progress view
@@ -89,15 +89,3 @@
 - (void)hideProgressView;
 
 @end
-
-/**
- *  Notification posted when the cancel button is pressed
- */
-extern NSString *const JMCancelUploadNotification;
-
-/**
- *  Notification posted when the retry button is pressed
- */
-extern NSString *const JMRetryUploadNotification;
-
-extern NSString *const JMResumeUploadNotification;

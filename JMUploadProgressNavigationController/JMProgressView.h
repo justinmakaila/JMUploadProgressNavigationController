@@ -65,6 +65,9 @@
  */
 @property (nonatomic, getter = isDragging) BOOL dragging;
 
+/**
+ *  Inidcates whether or not the view is open
+ */
 @property (nonatomic, getter = isOpen) BOOL open;
 
 /**
@@ -99,7 +102,14 @@
  */
 - (void)requestUploadPermission;
 
+/**
+ *  Animates the view to the closed position
+ */
 - (void)animateToClose;
+
+/**
+ *  Animates the view to the open positions
+ */
 - (void)animateToOpen;
 
 @end
