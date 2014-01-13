@@ -95,11 +95,11 @@ static NSString *const kGoButtonText = @"Go";
 - (void)baseInit {
     self.clipsToBounds = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.backgroundColor = [UIColor colorWithHexString:@"212121"];
+    self.backgroundColor = [UIColor colorWithHexString:@"333"];
     
     self.contentView = [[UIView alloc] init];
     self.contentView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    self.contentView.backgroundColor = [UIColor colorWithHexString:@"212121"];
+    self.contentView.backgroundColor = [UIColor colorWithHexString:@"333"];
     [self addSubview:self.contentView];
     
     self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -108,18 +108,18 @@ static NSString *const kGoButtonText = @"Go";
     [self.contentView addSubview:self.cancelButton];
     
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-    self.imageView.layer.cornerRadius = 4.0f;
+    self.imageView.layer.cornerRadius = 5.0f;
     self.imageView.clipsToBounds = YES;
     [self.contentView addSubview:self.imageView];
     
     self.progressView = [[LDProgressView alloc] init];
-    self.progressView.frame = CGRectMake(70, 20, 240, 30);
+    self.progressView.frame = CGRectMake(71, 23, 239, 25);
     self.progressView.showText = @NO;
     self.progressView.type = LDProgressSolid;
     self.progressView.animate = @YES;
     self.progressView.background = [UIColor colorWithHexString:@"999"];
-    self.progressView.color = [UIColor purpleColor];
-    self.progressView.borderRadius = @4;
+    self.progressView.color = [UIColor colorWithHexString:@"8130f2"];
+    self.progressView.borderRadius = @5;
     self.progressView.clipsToBounds = YES;
     [self.contentView addSubview:self.progressView];
     
@@ -132,8 +132,8 @@ static NSString *const kGoButtonText = @"Go";
 
 - (void)setupProgressView {
     self.statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, CGRectGetWidth(self.progressView.bounds), CGRectGetHeight(self.progressView.bounds))];
-    self.statusLabel.font = [UIFont boldSystemFontOfSize:15.0f];
-    self.statusLabel.textColor = [UIColor whiteColor];
+    self.statusLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    self.statusLabel.textColor = [UIColor colorWithHexString:@"e5e5e5"];
     [self.progressView addSubview:self.statusLabel];
     
     self.actionButton = [UIButton buttonWithType:UIButtonTypeCustom];
